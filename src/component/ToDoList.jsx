@@ -57,7 +57,7 @@ function ToDoList() {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={addTodo}>
         <div className="input-container">
           <input
@@ -67,27 +67,30 @@ function ToDoList() {
             onChange={(e) => setInputValue(e.target.value)}
           />
           <button className="button" type="submit">
-            Add
+            ADD
           </button>
         </div>
       </form>
-      <ul className="todo-list">
-        {todos.map((todo, index) => (
-          <ToDoItem
-            key={index}
-            todo={todo}
-            index={index}
-            editIndex={editIndex}
-            editText={editText}
-            deleteTodo={deleteTodo}
-            startEdit={startEdit}
-            cancelEdit={cancelEdit}
-            saveEdit={saveEdit}
-            setEditText={setEditText}
-          />
-        ))}
-      </ul>
-    </div>
+
+      <div>
+        <ul className="todo-list">
+          {todos.map((todo, index) => (
+            <ToDoItem
+              key={index}
+              todo={todo}
+              index={index}
+              editIndex={editIndex}
+              editText={editText}
+              deleteTodo={deleteTodo}
+              startEdit={startEdit}
+              cancelEdit={cancelEdit}
+              saveEdit={saveEdit}
+              setEditText={setEditText}
+            />
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 

@@ -22,20 +22,23 @@ function ToDoItem({
             onChange={(e) => setEditText(e.target.value)}
           />
           <button className="button-group" onClick={() => saveEdit(index)}>
-            Save
+            SAVE
           </button>
           <button className="button-group" onClick={cancelEdit}>
-            Cancel
+            CANCEL
           </button>
         </>
       ) : (
         <>
           <span className="todo-text">{todo.text}</span>
-          <button className="button-group" onClick={() => startEdit(index, todo.text)}>
-            Edit
+          <button
+            className="button-group"
+            onClick={() => startEdit(index, todo.text)}
+          >
+            EDIT
           </button>
           <button className="button-group" onClick={() => deleteTodo(index)}>
-            Delete
+            DEL
           </button>
         </>
       )}
